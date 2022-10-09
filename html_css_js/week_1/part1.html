@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1>Please Enter Your Details For Our Dating Website</h1>
+<form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
+<fieldset>
+<legend>Your Face</legend>
+<label for="fileChooser">Your image:</label>
+<input type="file" id="fileChooser" name="file" required><br>
+<label for="preview">Image preview:</label>
+<img id="preview" name="image">
+</fieldset><br>
+<fieldset>
+<legend>Your General Details</legend>
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" placeholder="Your full name" required><br>
+<label for="gender">Gender:</label>
+<input type="radio" id="gender" name="gender" value="male" required>Male
+<input type="radio" id="gender" name="gender" value="female" required>Female<br>
+<label for="age">Age:</label>
+<input type="number" id="age" name="age" min="0" max="99" step="1" required><br>
+<label for="date">Date of Birth:</label>
+<input type="date" id="date" name="date"><br>
+<label for="color">Favorite color:</label>
+<input type="color" id="color" name="color"><br>
+<label for="country">Which country:</label>
+<select name="country" id="country">
+<option value="none">no selection</option>
+<option value="ban">Bangladesh</option>
+<option value="sri">Sri Lanka</option>
+<option value="sa">South Africa</option>
+<option value="hk">Hong Kong</option>
+<option value="india">India</option>
+</select><br>
+</fieldset>
+<fieldset>
+<legend>Your Indicators</legend>
+<label for="height">Height:</label>
+Short<input type="range" min="0" max="100" id="height" name="height" step="1">Tall<br>
+<label for="salary">Salary:</label>
+Poor<input type="range" min="0" max="100" id="salary" name="salary" step="1">Rich<br>
+</fieldset>
+<fieldset>
+<legend>Your Contact Information</legend>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required><br>
+<label for="tel">Mobile:</label>
+<input type="tel" id="tel" name="tel" ><br>
+<label for="addr">Address:</label>
+<textarea id="addr" name="addr" rows="3" cols="60">
+</textarea><br>
+<label for="con">Method to contact you:</label>
+<input type="checkbox" id="con" name="con" value="email">Email
+<input type="checkbox" id="con" name="con" value="whatsapp">Whatsapp
+<input type="checkbox" id="con" name="con" value="chat">In-app chat
+</fieldset>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>

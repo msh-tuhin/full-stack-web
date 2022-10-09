@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body onload = "do_game()">
+<script>
+function do_game(){
+  var colors = ["red","green","blue","yellow","orange","purple","cyan","pink","olive","aqua","tan"];
+  colors.sort();
+  var num = Math.random() * (colors.length);
+  num = Math.floor(num);
+  var target = colors[num];
+  alert(target);
+  var bool = true,bool2=false;
+  count = 1;
+  var text = "Sorry,your guess is not correct!\n\nHint:your color is alphabetically higher than mine.\n\n";
+  var text2 = "Sorry,your guess is not correct!\n\nHint:your color is alphabetically lower than mine.\n\n";
+  var text3 = "Please try again.\n\n";
+  var text4 = text+text3;
+  var text5 = text2+text3;
+  var text6 = "Congratulations!You have guessed the color!";
+  var text7 = "You can see the color in the background!\n\n";
+  while(bool){
+	  var guess = prompt("I am thinking of one of these colors:\n\n" + colors +"\n\nWhat color am I thinking of?");
+	  bool2 = false;
+	  for(var i=0;i<colors.length;i++){
+		  if(guess == colors[i]){
+			  bool2 = true;
+			  break;
+		  }
+	  }
+	  if(bool2){
+		  if(guess == target){
+			  var b = document.getElementsByTagName("body")[0];
+			  b.style.background = guess;
+			  alert(text6+"\n\nIt took you "+count+" guesses to finish the game!\n\n"+text7);
+			  bool = false;
+		  }
+		  else{
+			  if(guess > target){
+				  alert(text4);
+				  count++;
+			  }
+			  else{
+				  alert(text5);
+				  count++;
+			  }
+		  }
+	  }
+	  else{
+		   alert("I don't recognize the color!\n\nPlease try again.\n\n");
+		   count++;
+	  }
+	  //if(guess == target) bool = false;
+  };
+};
+</script>
+</body>
+</html>
